@@ -10,6 +10,12 @@ namespace Interfaces_and_Ploymorphism
     {
         static void Main(string[] args)
         {
+            var encoder = new VideoEncoder();
+
+            encoder.RegisterNotification(new MailNotificationChannel());
+            encoder.RegisterNotification(new SmsNotificationChannel());
+
+            encoder.Encode(new Video());
         }
     }
 }
